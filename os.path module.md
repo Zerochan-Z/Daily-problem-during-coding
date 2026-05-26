@@ -111,3 +111,52 @@ if __name__ == "__main__":
 | `os.walk()` | Traversed entire folder structure |
 
 ---
+
+---
+
+---
+
+### The Only 4 You Need to Remember
+
+| Function | What it does | When you use it |
+|----------|--------------|-----------------|
+| `os.path.exists()` | Check if file/folder exists | Before opening a file |
+| `os.path.join()` | Build paths safely | Creating file paths |
+| `os.path.isdir()` | Check if it's a folder | Before listing contents |
+| `os.path.isfile()` | Check if it's a file | Before reading a file |
+
+---
+
+### Everything Else = Look Up When Needed
+
+| Function | When you'll use it | How often |
+|----------|-------------------|------------|
+| `os.path.dirname()` | Get parent folder | Rare |
+| `os.path.basename()` | Get filename | Rare |
+| `os.path.splitext()` | Get file extension | Rare |
+| `os.path.abspath()` | Get full path | Rare |
+| `os.path.getsize()` | Get file size | Very rare |
+
+**Just Google when you need them.**
+
+---
+
+### Your Mental Model
+
+```python
+import os
+
+# 1. Check if something exists
+if os.path.exists("data.csv"):
+    print("File exists")
+
+# 2. Build a path (don't use + or /)
+file_path = os.path.join("folder", "subfolder", "data.csv")
+
+# 3. Check if it's a folder or file
+if os.path.isdir("my_folder"):
+    print("This is a folder")
+
+if os.path.isfile("data.csv"):
+    print("This is a file")
+```
